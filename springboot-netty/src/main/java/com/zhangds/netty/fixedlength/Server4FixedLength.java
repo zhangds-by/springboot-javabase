@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.fixedlength;
+package com.zhangds.netty.fixedlength;
 
 import com.zhangds.webservice.netty.common.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;

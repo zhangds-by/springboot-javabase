@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.common;
+package com.zhangds.netty.common;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;

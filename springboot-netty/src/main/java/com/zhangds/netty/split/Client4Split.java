@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.split;
+package com.zhangds.netty.split;
 
 import com.zhangds.webservice.netty.common.ClientHandler;
 import io.netty.bootstrap.Bootstrap;

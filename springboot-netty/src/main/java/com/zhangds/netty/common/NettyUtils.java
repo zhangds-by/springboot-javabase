@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.common;
+package com.zhangds.netty.common;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;

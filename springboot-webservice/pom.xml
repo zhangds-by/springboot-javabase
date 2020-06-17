@@ -33,44 +33,6 @@
         </dependency>
 
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>5.0.0.Alpha2</version>
-        </dependency>
-
-        <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-codec-http</artifactId>
-            <version>5.0.0.Alpha2</version>
-            <!-- <version>4.1.24.Final</version> -->
-        </dependency>
-        <!-- 接收处理工具 -->
-        <dependency>
-            <groupId>org.jboss.marshalling</groupId>
-            <artifactId>jboss-marshalling-river</artifactId>
-            <version>1.4.11.Final</version>
-        </dependency>
-        <!-- 序列化处理工具 -->
-        <dependency>
-            <groupId>org.jboss.marshalling</groupId>
-            <artifactId>jboss-marshalling-serial</artifactId>
-            <version>1.4.11.Final</version>
-        </dependency>
-        <!-- 系统信息收集 -->
-        <dependency>
-            <groupId>org.hyperic.sigar</groupId>
-            <artifactId>com.springsource.org.hyperic.sigar</artifactId>
-            <version>1.6.3</version>
-        </dependency>
-        <dependency>
-            <groupId>org.kaazing</groupId>
-            <artifactId>sigar.dist</artifactId>
-            <version>1.0.0.0</version>
-            <classifier>distribution</classifier>
-            <type>zip</type>
-        </dependency>
-
-        <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>4.3.12.RELEASE</version>

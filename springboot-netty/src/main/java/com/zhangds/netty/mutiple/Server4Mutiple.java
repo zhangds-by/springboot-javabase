@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.mutiple;
+package com.zhangds.netty.mutiple;
 
 import com.zhangds.webservice.netty.common.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;

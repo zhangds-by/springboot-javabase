@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.common;
+package com.zhangds.netty.common;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandler.Sharable;

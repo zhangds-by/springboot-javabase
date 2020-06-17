@@ -1,4 +1,4 @@
-package com.zhangds.webservice.netty.fixedlength;
+package com.zhangds.netty.mutiple;
 
 import com.zhangds.webservice.netty.common.ClientHandler;
 import io.netty.bootstrap.Bootstrap;
@@ -7,10 +7,7 @@ import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import io.netty.handler.codec.FixedLengthFrameDecoder;
-import io.netty.handler.codec.string.StringDecoder;
 
-import java.nio.charset.Charset;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
@@ -18,14 +15,14 @@ import java.util.concurrent.TimeUnit;
  * Create by zhangds
  * 2020-05-14 15:59
  **/
-public class Client4FixedLength {
+public class Client4Mutiple {
 
     // 处理请求和处理服务端响应的线程组
     public static EventLoopGroup group = null;
     // 客户端启动相关配置信息
     public static Bootstrap bootstrap = null;
 
-    public Client4FixedLength(){
+    public Client4Mutiple(){
         init();
     }
 
@@ -45,7 +42,7 @@ public class Client4FixedLength {
     }
 
     @SuppressWarnings("all")
-    public ChannelFuture doRequest(String host, int port) throws InterruptedException{
+    public ChannelFuture doRequest(String host, int port, final ChannelHandler... handlers) throws InterruptedException{
         /*
          * 客户端的Bootstrap没有childHandler方法。只有handler方法。
          * 方法含义等同ServerBootstrap中的childHandler
@@ -55,11 +52,6 @@ public class Client4FixedLength {
         this.bootstrap.handler(new ChannelInitializer<SocketChannel>() {
             @Override
             protected void initChannel(SocketChannel channel) throws Exception {
-                ChannelHandler[] handlers = new ChannelHandler[3];
-                handlers[0] = new FixedLengthFrameDecoder(3);
-                // 字符串解码器Handler，会自动处理channelRead方法的msg参数，将ByteBuf类型的数据转换为字符串对象
-                handlers[1] = new StringDecoder(Charset.forName("UTF-8"));
-                handlers[2] = new ClientHandler();
                 channel.pipeline().addLast(handlers);
             }
         });
@@ -69,11 +61,11 @@ public class Client4FixedLength {
     }
 
     public static void main(String[] args) {
-        Client4FixedLength client = null;
+        Client4Mutiple client = null;
         ChannelFuture future = null;
         try{
-            client = new Client4FixedLength();
-            future = client.doRequest("localhost", 9999);
+            client = new Client4Mutiple();
+            future = client.doRequest("localhost", 9999, new ClientHandler());
 
             Scanner s = null;
             while(true){
