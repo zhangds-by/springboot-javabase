@@ -17,7 +17,6 @@ public class ServerHandler extends ChannelHandlerAdapter {
      * @param msg 读取到的数据。 默认类型是ByteBuf，是Netty自定义的。是对ByteBuffer的封装。 不需要考虑复位问题。
      * @throws Exception
      */
-    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         /*// 获取读取的数据， 是一个缓冲。
         ByteBuf readBuffer = (ByteBuf) msg;

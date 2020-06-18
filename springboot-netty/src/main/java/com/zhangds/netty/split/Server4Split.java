@@ -1,6 +1,6 @@
 package com.zhangds.netty.split;
 
-import com.zhangds.webservice.netty.common.ServerHandler;
+import com.zhangds.netty.common.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

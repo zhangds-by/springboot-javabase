@@ -1,6 +1,6 @@
 package com.zhangds.netty.fixedlength;
 
-import com.zhangds.webservice.netty.common.ClientHandler;
+import com.zhangds.netty.common.ClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;

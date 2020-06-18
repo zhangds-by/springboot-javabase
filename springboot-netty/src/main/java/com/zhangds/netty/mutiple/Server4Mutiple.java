@@ -1,6 +1,6 @@
 package com.zhangds.netty.mutiple;
 
-import com.zhangds.webservice.netty.common.ServerHandler;
+import com.zhangds.netty.common.ServerHandler;
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

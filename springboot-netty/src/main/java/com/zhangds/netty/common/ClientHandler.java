@@ -10,7 +10,6 @@ import io.netty.util.ReferenceCountUtil;
  **/
 public class ClientHandler extends ChannelHandlerAdapter {
 
-    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         try {
             /*ByteBuf readBuf = (ByteBuf) msg;
@@ -25,7 +24,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
         }
     }
 
-    @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
         System.out.println("client exceptionCaught method run...");
         ctx.close();
@@ -36,7 +34,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
      * @param ctx
      * @throws Exception
      */
-    @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("channelInactive method run...");
     }
@@ -46,7 +43,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
      * @param ctx
      * @throws Exception
      */
-    @Override
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         System.out.println("channelActive method run...");
     }
@@ -56,7 +52,6 @@ public class ClientHandler extends ChannelHandlerAdapter {
      * @param ctx
      * @throws Exception
      */
-    @Override
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         System.out.println("channelReadComplete method run...");
     }
