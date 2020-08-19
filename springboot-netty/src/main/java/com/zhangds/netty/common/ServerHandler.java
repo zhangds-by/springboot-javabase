@@ -4,19 +4,21 @@ import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 
 /**
  * Create by zhangds
  * 2020-05-14 13:01
  **/
 @Sharable
-public class ServerHandler extends ChannelHandlerAdapter {
+public class ServerHandler extends ChannelInboundHandlerAdapter {
     /**
      *用于服务端读取数据请求的逻辑
      * @param ctx 客户端连接的所有资源 如对应的Channel
      * @param msg 读取到的数据。 默认类型是ByteBuf，是Netty自定义的。是对ByteBuffer的封装。 不需要考虑复位问题。
      * @throws Exception
      */
+    @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
         /*// 获取读取的数据， 是一个缓冲。
         ByteBuf readBuffer = (ByteBuf) msg;

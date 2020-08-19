@@ -6,6 +6,7 @@
     <modules>
         <module>springboot-webservice</module>
         <module>springboot-netty</module>
+        <module>springboot-redis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -30,16 +31,24 @@
                 <artifactId>spring-boot-starter</artifactId>
             </dependency>
 
+            <!-- 常用工具 -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-test</artifactId>
-                <scope>test</scope>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.junit.vintage</groupId>
-                        <artifactId>junit-vintage-engine</artifactId>
-                    </exclusion>
-                </exclusions>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.11.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.12</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>18.0</version>
             </dependency>
 
             <dependency>
