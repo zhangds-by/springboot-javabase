@@ -1,0 +1,13 @@
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.25.128:3306/scheduling?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
