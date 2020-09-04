@@ -1,0 +1,69 @@
+
+
+spring:
+  # 异常处理器处理
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+  #  文件配置
+  servlet:
+    multipart:
+      enabled: true
+      #      最大支持文件大小
+      max-file-size: 100MB
+      #      最大支持请求大小
+      max-request-size: 100MB
+
+  # ftl模板配置
+  freemarker:
+    #设置编码格式
+    charset: utf-8
+    #设置文件后缀
+    suffix: .ftl
+    #设置ftl文件路径
+    template-loader-path: classpath:/templates
+    #关闭缓存，及时刷新，上线生产环境需要改为true
+    cache: false
+
+  # 激活多配置文件
+  profiles:
+    active: dev
+
+  #  多数据源配置
+  datasource:
+    member:
+      url: jdbc:mysql://192.168.25.128:3306/memberdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: memberDataSource
+    order:
+      url: jdbc:mysql://192.168.25.128:3306/orderdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: orderDataSource
+    jta:
+      log-dir: /home
+
+#文件存储路径
+filepath: D:/file/
+
+server:
+  port: 8089

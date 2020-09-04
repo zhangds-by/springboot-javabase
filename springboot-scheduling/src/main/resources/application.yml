@@ -1,4 +1,6 @@
 
+server:
+  port: 8088
 spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -6,8 +8,16 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
 
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+logging:
+  config: classpath:logback-spring.xml

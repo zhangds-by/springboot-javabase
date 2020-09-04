@@ -34,7 +34,7 @@ public class SysJob {
     /**
      * 状态（1正常 0暂停）
      */
-    private Integer jobStatus;
+    private Integer status;
     /**
      * 备注
      */
@@ -88,12 +88,12 @@ public class SysJob {
         this.cronExpression = cronExpression;
     }
 
-    public Integer getJobStatus() {
-        return jobStatus;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setJobStatus(Integer jobStatus) {
-        this.jobStatus = jobStatus;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public String getRemark() {

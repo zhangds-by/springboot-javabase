@@ -5,7 +5,6 @@ import com.zhangds.common.interfaces.IDictEnum;
 public enum SysJobStatus implements IDictEnum {
     STOP("0", "终止"),
     NORMAL("1", "正常"),
-    FINISH("2", "结束")
     ;
 
     private String code;
