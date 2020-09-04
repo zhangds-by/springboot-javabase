@@ -32,11 +32,11 @@ public class ResponseHandler implements Serializable {
         this.data = data;
     }
 
-    public static ResponseHandler succeed() {
+    public static ResponseHandler success() {
         return new ResponseHandler(ResponseHandler.CD0[0], ResponseHandler.CD0[1]);
     }
 
-    public static ResponseHandler succeed(Object data) {
+    public static ResponseHandler success(Object data) {
         return new ResponseHandler(ResponseHandler.CD0[0], ResponseHandler.CD0[1], data);
     }
 

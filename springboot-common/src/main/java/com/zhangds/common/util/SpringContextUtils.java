@@ -1,9 +1,14 @@
-package com.zhangds.scheduling.util;
+package com.zhangds.common.util;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Component;
 
+/**
+ * 从spring容器中获取Bean
+ * @author: zhangds
+ * @date: 2020/9/3 17:12
+ */
 @Component
 public class SpringContextUtils implements ApplicationContextAware {
 
@@ -52,6 +57,22 @@ public class SpringContextUtils implements ApplicationContextAware {
     public static <T> T getBean(Class<T> clazz) {
         checkApplicationContext();
         return (T) applicationContext.getBeansOfType(clazz);
+    }
+
+    public static <T> T getBean(String name, Class<T> clazz) {
+        return applicationContext.getBean(name, clazz);
+    }
+
+    public static boolean containsBean(String name) {
+        return applicationContext.containsBean(name);
+    }
+
+    public static boolean isSingleton(String name) {
+        return applicationContext.isSingleton(name);
+    }
+
+    public static Class<? extends Object> getType(String name) {
+        return applicationContext.getType(name);
     }
 
 }

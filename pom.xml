@@ -10,6 +10,7 @@
         <module>springboot-scheduling</module>
         <module>springboot-spring</module>
         <module>springboot-common</module>
+        <module>springboot-pool</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -19,6 +20,7 @@
     </parent>
     <groupId>com.zhangds</groupId>
     <artifactId>springboot-javabase</artifactId>
+
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-javabase</name>
     <description>Demo project for Spring Boot</description>
