@@ -1,2 +1,34 @@
 lxg:
   msg: 这是开发环境
+
+  #  多数据源配置
+spring:
+  datasource:
+    member:
+      url: jdbc:mysql://192.168.25.128:3306/memberdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: memberDataSource
+    order:
+      url: jdbc:mysql://192.168.25.128:3306/orderdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      borrowConnectionTimeout: 30
+      loginTimeout: 30
+      maintenanceInterval: 60
+      maxIdleTime: 60
+      maxLifetime: 20000
+      maxPoolSize: 25
+      minPoolSize: 3
+      uniqueResourceName: orderDataSource
+    jta:
+      log-dir: /home

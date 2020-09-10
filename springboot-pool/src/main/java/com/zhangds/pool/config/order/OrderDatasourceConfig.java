@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jta.atomikos.AtomikosDataSourceBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -55,6 +56,7 @@ public class OrderDatasourceConfig {
      * @throws Exception
      */
     @Bean(name = "orderSqlSessionFactory")
+    @Primary
     public SqlSessionFactory orderSqlSessionFactory(@Qualifier("orderDataSource") DataSource dataSource) throws Exception {
         //逻辑删除 如果值为1,表示已经删除,如果为0,表示未删除
         GlobalConfiguration globalConfig = new GlobalConfiguration();

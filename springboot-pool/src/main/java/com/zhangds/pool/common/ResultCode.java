@@ -1,4 +1,4 @@
-package com.zhangds.pool.model;
+package com.zhangds.pool.common;
 
 public enum ResultCode {
     //成功

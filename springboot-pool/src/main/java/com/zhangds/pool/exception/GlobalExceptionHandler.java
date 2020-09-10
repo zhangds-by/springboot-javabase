@@ -1,8 +1,8 @@
 package com.zhangds.pool.exception;
 
 
-import com.zhangds.pool.model.Result;
-import com.zhangds.pool.model.ResultCode;
+import com.zhangds.pool.common.Result;
+import com.zhangds.pool.common.ResultCode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;

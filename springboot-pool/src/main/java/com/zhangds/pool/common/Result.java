@@ -1,4 +1,4 @@
-package com.zhangds.pool.model;
+package com.zhangds.pool.common;
 
 public class Result<T> {
     private int code;
