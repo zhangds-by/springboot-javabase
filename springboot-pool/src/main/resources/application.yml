@@ -31,7 +31,7 @@ spring:
 
   mybatis-plus:
     mapper-locations: classpath:com/zhangds/pool/mapper/xml/*Mapper.xml
-    typeAliasesPackage: com.zhangds.pool.mybatisplus.entities
+    typeAliasesPackage: com.zhangds.pool.entities
     global-config:
       #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID,"该类型为未设置主键类型,5, "字符串全局唯一ID"";
       id-type: 0

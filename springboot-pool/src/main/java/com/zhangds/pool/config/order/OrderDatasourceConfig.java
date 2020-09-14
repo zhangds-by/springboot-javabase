@@ -9,11 +9,15 @@ import com.mysql.jdbc.jdbc2.optional.MysqlXADataSource;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.jta.atomikos.AtomikosDataSourceBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
@@ -21,6 +25,9 @@ import java.sql.SQLException;
 @Configuration
 @MapperScan(value = "com.zhangds.pool.mapper.order",sqlSessionTemplateRef = "orderSqlSessionTemplate")
 public class OrderDatasourceConfig {
+
+    private Logger log = LoggerFactory.getLogger(OrderDatasourceConfig.class);
+
     /**
      * 创建DataSource
      * @return
@@ -56,7 +63,6 @@ public class OrderDatasourceConfig {
      * @throws Exception
      */
     @Bean(name = "orderSqlSessionFactory")
-    @Primary
     public SqlSessionFactory orderSqlSessionFactory(@Qualifier("orderDataSource") DataSource dataSource) throws Exception {
         //逻辑删除 如果值为1,表示已经删除,如果为0,表示未删除
         GlobalConfiguration globalConfig = new GlobalConfiguration();
@@ -71,6 +77,8 @@ public class OrderDatasourceConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         sqlSessionFactoryBean.setConfiguration(configuration);
         sqlSessionFactoryBean.setGlobalConfig(globalConfig);
+        Resource[] mapperLocations = new PathMatchingResourcePatternResolver().getResources("classpath*:/mapper/xml/order/*.xml");
+        sqlSessionFactoryBean.setMapperLocations(mapperLocations);
 
         return sqlSessionFactoryBean.getObject();
     }

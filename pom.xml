@@ -12,6 +12,7 @@
         <module>springboot-common</module>
         <module>springboot-pool</module>
         <module>springboot-mybatisplus</module>
+        <module>springboot-shiro</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -38,11 +39,24 @@
         </dependency>
     </dependencies>
     <dependencyManagement>
+
         <dependencies>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-redis</artifactId>
+            </dependency>
+
             <dependency>
                 <groupId>com.zhangds</groupId>
                 <artifactId>springboot-common</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhangds</groupId>
+                <artifactId>springboot-pool</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!-- 常用工具 -->
             <dependency>
@@ -101,6 +115,12 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>1.0.29</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.8.13</version>
             </dependency>
 
             <dependency>

@@ -1,6 +1,6 @@
 package com.zhangds.pool.controller;
 
-import com.zhangds.pool.mapper.member.MemberMapper;
+import com.zhangds.pool.mapper.member.UserMapper;
 import com.zhangds.pool.mapper.order.OrderMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class MultiDatasourceController {
 
     @Autowired
-    private MemberMapper memberMapper;
+    private UserMapper userMapper;
 
     @Autowired
     private OrderMapper orderMapper;
@@ -26,7 +26,7 @@ public class MultiDatasourceController {
     @Transactional(rollbackFor = Exception.class)
     @RequestMapping("/addUser")
     public String addUser(String name, Integer age)  {
-        return memberMapper.addUser(name, age)>0?"success":"fail";
+        return null;
     }
 
     /**

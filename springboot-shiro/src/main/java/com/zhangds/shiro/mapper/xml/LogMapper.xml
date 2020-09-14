@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangds.shiro.mapper.LogMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zhangds.shiro.entities.Log">
+        <id column="id" property="id" />
+        <result column="operation" property="operation" />
+        <result column="operation_module" property="operationModule" />
+        <result column="username" property="username" />
+        <result column="date_time" property="dateTime" />
+        <result column="url" property="url" />
+        <result column="respParam" property="respParam" />
+        <result column="errorLogFlag" property="errorLogFlag" />
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zhangds.shiro.mapper.PermissionMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zhangds.shiro.entities.Permission">
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="per_code" property="perCode" />
+    </resultMap>
+
+    <select id="findPermissionByRole" resultType="com.zhangds.shiro.entities.Permission"
+            parameterType="com.zhangds.shiro.entities.Role">
+        SELECT
+        p.id as id,
+        p.name as name,
+        p.per_code as perCode
+        FROM
+        role r
+        LEFT JOIN role_permission rp ON r.id = rp.role_id
+        LEFT JOIN permission p ON p.id = rp.permission_id
+        <where>
+            1 = 1
+            <if test="name != null and name != '' ">
+                AND r.name = #{name}
+            </if>
+        </where>
+    </select>
+</mapper>
