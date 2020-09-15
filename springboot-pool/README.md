@@ -16,3 +16,9 @@
 
 > mybatisplus
 
+>Hibernate Validate
+    
+    注解校验
+    分组校验
+    自定义校验
+

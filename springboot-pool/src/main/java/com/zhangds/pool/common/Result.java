@@ -58,4 +58,10 @@ public class Result<T> {
                 .setCode(resultCode)
                 .setMessage(msg);
     }
+
+    public static <T> Result<T> fail(T data) {
+        return new Result()
+                .setCode(ResultCode.FAIL)
+                .setMessage(data.toString());
+    }
 }
