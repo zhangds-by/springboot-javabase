@@ -11,8 +11,13 @@
         <module>springboot-spring</module>
         <module>springboot-common</module>
         <module>springboot-pool</module>
-        <module>springboot-mybatisplus</module>
+        <module>springboot-mybatisplus-multi</module>
         <module>springboot-shiro</module>
+        <module>springboot-smallcase</module>
+        <module>springboot-swagger</module>
+        <module>springboot-security</module>
+        <module>springboot-mybatisplus</module>
+        <module>springboot-mybatis</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -30,21 +35,56 @@
     <properties>
         <java.version>1.8</java.version>
         <project.version>0.0.1-SNAPSHOT</project.version>
+<!--        <start-class>com.zhangds.smallcase.SmallCaseApplication</start-class>-->
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-    </dependencies>
     <dependencyManagement>
-
         <dependencies>
-
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-redis</artifactId>
+            </dependency>
+
+            <!--spring security依赖包-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-security</artifactId>
+                <version>2.3.1.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-test</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>com.auth0</groupId>
+                <artifactId>java-jwt</artifactId>
+                <version>3.2.0</version>
+            </dependency>
+
+            <!--JWT(Json Web Token)登录支持-->
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>0.9.0</version>
+            </dependency>
+
+            <!--cache支持-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-cache</artifactId>
+            </dependency>
+
+            <dependency>
+                <groupId>org.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>3.8.1</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.cache</groupId>
+                <artifactId>cache-api</artifactId>
             </dependency>
 
             <dependency>
@@ -56,9 +96,34 @@
             <dependency>
                 <groupId>com.zhangds</groupId>
                 <artifactId>springboot-pool</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>${project.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.zhangds</groupId>
+                <artifactId>springboot-mybatisplus</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zhangds</groupId>
+                <artifactId>springboot-security</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
             <!-- 常用工具 -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>5.3.10</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.47</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
@@ -108,7 +173,7 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.1.44</version>
+                <version>8.0.18</version>
             </dependency>
 
             <dependency>
@@ -118,11 +183,62 @@
             </dependency>
 
             <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>1.2.10</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.2.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>3.4.0</version>
+            </dependency>
+
+            <dependency>
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjrt</artifactId>
                 <version>1.8.13</version>
             </dependency>
 
+            <!--springfox swagger官方Starter-->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>3.0.0</version>
+            </dependency>
+
+            <!--读取xml文件配置-->
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-api</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-impl</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.xml.bind</groupId>
+                <artifactId>jaxb-core</artifactId>
+                <version>2.3.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>1.1.1</version>
+            </dependency>
+
+            <!--远程调用-->
             <dependency>
                 <groupId>org.apache.cxf</groupId>
                 <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
@@ -155,6 +271,7 @@
 
 
     </dependencyManagement>
+
 
 <!--    <build>-->
 <!--        <plugins>-->

@@ -1,66 +1,12 @@
 spring:
-  # 异常处理器处理
-  mvc:
-    throw-exception-if-no-handler-found: true
-  resources:
-    add-mappings: false
-
-  #  文件配置
-  servlet:
-    multipart:
-      enabled: true
-      #      最大支持文件大小
-      max-file-size: 100MB
-      #      最大支持请求大小
-      max-request-size: 100MB
-
-  # ftl模板配置
-  freemarker:
-    #设置编码格式
-    charset: utf-8
-    #设置文件后缀
-    suffix: .ftl
-    #设置ftl文件路径
-    template-loader-path: classpath:/templates
-    #关闭缓存，及时刷新，上线生产环境需要改为true
-    cache: false
-
   datasource:
-    druid:
-      member:
-        username: root
-        password: root
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://192.168.25.128:3306/memberdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-        type: com.alibaba.druid.pool.DruidDataSource
-        initialSize: 5
-        minIdle: 5
-        maxActive: 20
-
-      order:
-        username: root
-        password: root
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://192.168.25.128:3306/orderdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false
-        type: com.alibaba.druid.pool.DruidDataSource
-        initialSize: 5
-        minIdle: 5
-        maxActive: 20
-
-  mybatis-plus:
-    mapper-locations: classpath:com/zhangds/mybatisplus/mapper/xml/*Mapper.xml
-    typeAliasesPackage: com.zhangds.mybatisplus.entities
-    global-config:
-      #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID,"该类型为未设置主键类型,5, "字符串全局唯一ID"";
-      id-type: 0
-      db-column-underline: true
-      refresh-mapper: true
-      #configuration:
-    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
-    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
-#文件存储路径
-filepath: D:/file/
-
-server:
-  port: 8090
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.25.128:3306/springboot?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: root
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  type-aliases-package: com.zhangds.mybatisplus.entities

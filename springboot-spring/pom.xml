@@ -12,6 +12,12 @@
     <artifactId>springboot-spring</artifactId>
 
     <dependencies>
+
+        <dependency>
+            <groupId>com.zhangds</groupId>
+            <artifactId>springboot-common</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>

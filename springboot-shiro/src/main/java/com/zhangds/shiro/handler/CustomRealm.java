@@ -82,6 +82,11 @@ public class CustomRealm extends AuthorizingRealm {
         return simpleAuthorizationInfo;
     }
 
+    /**
+     * 验证用户登录
+     * @author: zhangds
+     * @date: 2020/11/2 11:25
+     */
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken auth) throws AuthenticationException {
         logger.info("--------------认证 doGetAuthenticationInfo-----------");

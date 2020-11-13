@@ -48,4 +48,10 @@ public class FreemarkerTest {
         //关闭输出
         fileWriter.close();
     }
+
+    @Test
+    public void testMath(){
+        System.out.println( 16>=13 & 16<=14);
+    }
+
 }

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.zhangds.pool.mybatisplus.*")
+@MapperScan(basePackages = "com.zhangds.pool.**")
 @EnableConfigurationProperties({MemberConfig.class, OrderConfig.class})
 @RestController
 @RequestMapping("app")

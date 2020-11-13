@@ -37,14 +37,14 @@ public class CodeGenerator {
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("root");
-        dsc.setUrl("jdbc:mysql://192.168.25.128:3306/orderdb?useUnicode=true&characterEncoding=UTF-8&useSSL=false");
+        dsc.setUrl("jdbc:mysql://192.168.25.128:3306/springboot?useUnicode=true&characterEncoding=UTF-8&useSSL=false");
         mpg.setDataSource(dsc);
 
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         strategy.setTablePrefix(new String[]{""});// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[]{"user"});// 需要生成的表
+        strategy.setInclude(new String[]{"user","log","permission","role","role_permission","user_role"});// 需要生成的表
         strategy.setSuperServiceClass(null);
         strategy.setSuperServiceImplClass(null);
         strategy.setSuperMapperClass(null);
@@ -87,13 +87,13 @@ public class CodeGenerator {
 
         // 包配置
         PackageConfig pc = new PackageConfig();
-        pc.setParent("com.zhangds.pool");
-        pc.setController("controller.order");
-        pc.setService("service.order");
-        pc.setServiceImpl("service.impl.order");
-        pc.setMapper("mapper.order");
-        pc.setEntity("entities.order");
-        pc.setXml("mapper.xml.order");
+        pc.setParent("com.zhangds.mybatisplus");
+        pc.setController("controller");
+        pc.setService("service");
+        pc.setServiceImpl("service.impl");
+        pc.setMapper("mapper");
+        pc.setEntity("entities");
+        pc.setXml("mapper.xml");
         mpg.setPackageInfo(pc);
 
 

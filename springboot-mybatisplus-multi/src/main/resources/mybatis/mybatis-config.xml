@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!-- 引入properties 属性文件 -->
+    <properties resource="db.properties"></properties>
+
+    <!--别名-->
+    <typeAliases>
+        <typeAlias alias="blog" type="com.wuzz.domain.Blog" />
+    </typeAliases>
+
+    <!--类型处理器
+        请求参数 : #{name,jdbcType=VARCHAR,typeHandler=com.zhangds.mybatisplus.handler.ExampleTypeHandler}
+        返回值 : <result column="name" property="name" jdbcType="VARCHAR" typeHandler="com.zhangds.mybatisplus.handler.ExampleTypeHandler"/>
+    -->
+    <typeHandlers>
+        <typeHandler handler="com.zhangds.mybatisplus.handler.ExampleTypeHandler"></typeHandler>
+    </typeHandlers>
+
+    <!-- 对象工厂 -->
+    <objectFactory type="com.zhangds.mybatisplus.handler.ExampleObjectFactory">
+    </objectFactory>
+
+    <plugins>
+        <plugin interceptor="com.wuzz.interceptor.SQLInterceptor">
+            <property name="wuzz" value="betterme" />
+        </plugin>
+        <plugin interceptor="com.wuzz.interceptor.MyPageInterceptor">
+        </plugin>
+    </plugins>
+
+    <!--<settings>
+        <setting name="cacheEnabled" value="true"/>
+        <setting name="lazyLoadingEnabled" value="true"/>
+        <setting name="multipleResultSetsEnabled" value="true"/>
+        <setting name="useColumnLabel" value="true"/>
+        <setting name="useGeneratedKeys" value="false"/>
+        <setting name="autoMappingBehavior" value="PARTIAL"/>
+        <setting name="autoMappingUnknownColumnBehavior" value="WARNING"/>
+        <setting name="defaultExecutorType" value="SIMPLE"/>
+        <setting name="defaultStatementTimeout" value="25"/>
+        <setting name="defaultFetchSize" value="100"/>
+        <setting name="safeRowBoundsEnabled" value="false"/>
+        <setting name="mapUnderscoreToCamelCase" value="false"/>
+        <setting name="localCacheScope" value="SESSION"/>
+        <setting name="jdbcTypeForNull" value="OTHER"/>
+        <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
+    </settings>-->
+
+    <!--表示不同环境的数据库配置 = 事务管理器 + 数据源-->
+    <environments default="development">
+        <environment id="development">
+            <!-- JDBC 使用了JDBC 的提交和回滚
+            单独使用时配置成MANAGED没有事务：没有提交和回滚事务，容器来管理事务的生命周期
+            使用  Spring + MyBatis 需要配置 transactionManager，自带配置 Transaction
+             -->
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <!--相对于类路径的资源引用-->
+        <mapper resource="com/zhangds/mybatisplus/mapper/BlogMapper.xml"/>
+        <!--完全限定资源定位符（URL）-->
+        <mapper url="file:///var/mappers/BlogMapper.xml"/>
+        <!--映射器接口实现类的完全限定类名-->
+        <mapper class="com.zhangds.mybatisplus.multi.mapper.BlogMapper"/>
+        <!--包内的映射器接口实现全部注册为映射器-->
+        <package name="com.zhangds.mybatisplus.multi.mapper"/>
+    </mappers>
+</configuration>
