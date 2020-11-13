@@ -30,3 +30,23 @@ build/
 ### VS Code ###
 .vscode/
 transaction-logs/
+springboot-common/src/main/resources/
+springboot-common/src/test/
+springboot-mybatis/src/main/resources/
+springboot-mybatisplus-multi/src/test/
+springboot-netty/src/main/resources/
+springboot-pool/src/main/java/com/zhangds/pool/mapper/xml/order/
+springboot-pool/src/main/resources/static/js/
+springboot-scheduling/src/main/java/com/zhangds/scheduling/util/
+springboot-scheduling/src/test/
+springboot-security/src/test/
+springboot-shiro/src/test/
+springboot-smallcase/src/main/java/com/zhangds/smallcase/mail/
+springboot-smallcase/src/test/
+springboot-spring/src/main/java/com/zhangds/spring/aop/controller/
+springboot-spring/src/main/java/com/zhangds/spring/aop/util/
+springboot-spring/src/main/resources/
+springboot-swagger/src/main/java/com/zhangds/swagger/controller/
+springboot-swagger/src/test/
+src/
+.gitignore
