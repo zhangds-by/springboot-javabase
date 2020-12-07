@@ -1,9 +1,13 @@
 spring:
+  profiles:
+    active: @activatedProperties@
+
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.25.128:3306/springboot?useUnicode=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
     password: root
+
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

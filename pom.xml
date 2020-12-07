@@ -272,6 +272,43 @@
 
     </dependencyManagement>
 
+    <!--
+    maven 多环境配置
+    mvn clean package -P prod
+    -->
+    <profiles>
+        <profile>
+            <!-- 开发 -->
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <activatedProperties>dev</activatedProperties>
+            </properties>
+        </profile>
+        <profile>
+            <!-- 测试 -->
+            <id>test</id>
+            <properties>
+                <activatedProperties>test</activatedProperties>
+            </properties>
+        </profile>
+        <profile>
+            <!-- 准生产 -->
+            <id>pre</id>
+            <properties>
+                <activatedProperties>pre</activatedProperties>
+            </properties>
+        </profile>
+        <profile>
+            <!-- 生产 -->
+            <id>prod</id>
+            <properties>
+                <activatedProperties>prod</activatedProperties>
+            </properties>
+        </profile>
+    </profiles>
 
 <!--    <build>-->
 <!--        <plugins>-->
