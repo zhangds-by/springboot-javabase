@@ -2,11 +2,6 @@ package com.zhangds.common.handler;
 
 import java.io.Serializable;
 
-/**
- *
- * ResponseHandler
- *
- */
 public class ResponseHandler implements Serializable {
     /**
      *

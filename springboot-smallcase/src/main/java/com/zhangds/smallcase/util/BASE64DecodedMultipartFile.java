@@ -1,4 +1,4 @@
-package com.zhangds.smallcase.uploadimg.util;
+package com.zhangds.smallcase.util;
 
 import org.springframework.web.multipart.MultipartFile;
 import sun.misc.BASE64Decoder;

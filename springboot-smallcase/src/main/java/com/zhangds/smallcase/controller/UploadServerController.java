@@ -1,15 +1,16 @@
-package com.zhangds.smallcase.uploadimg.controller;
+package com.zhangds.smallcase.controller;
 
 import com.zhangds.common.enums.ResultCode;
 import com.zhangds.common.handler.ResponseHandler;
 import com.zhangds.common.util.DateUtils;
 import com.zhangds.smallcase.bean.Base64ImgReq;
-import com.zhangds.smallcase.uploadimg.util.BASE64DecodedMultipartFile;
+import com.zhangds.smallcase.util.BASE64DecodedMultipartFile;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
@@ -18,6 +19,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.*;
 
+@RestController
 public class UploadServerController {
 
     @Value("${my-file-path.root-path}")

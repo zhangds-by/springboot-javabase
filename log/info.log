@@ -1,0 +1,45 @@
+2021-07-05 19:02:54.475 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 34636 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:02:54.477 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:02:55.139 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:06:28.379 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 33288 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:06:28.381 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:06:28.993 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:07:21.366 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 37368 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:07:21.369 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:07:21.980 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:08:55.547 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 37744 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:08:55.549 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:08:56.169 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:12:21.155 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 34748 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:12:21.158 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:12:21.768 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:12:39.377 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 37680 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:12:39.380 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:12:39.969 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:12:59.106 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 37496 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:12:59.109 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:12:59.716 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:15:03.181 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 36076 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:15:03.183 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:15:03.761 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 19:18:37.917 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - Starting MybatisPlusApplication on LAPTOP-PSO9GH7M with PID 36680 (D:\IdeaProjects\springboot-javabase\springboot-mybatisplus\target\classes started by zhangds in D:\IdeaProjects\springboot-javabase)
+2021-07-05 19:18:37.920 [main] INFO  com.zhangds.mybatisplus.MybatisPlusApplication - The following profiles are active: dev
+2021-07-05 19:18:38.521 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.

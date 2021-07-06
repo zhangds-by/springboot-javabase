@@ -1,4 +1,4 @@
-package com.zhangds.common.util;
+package com.zhangds.common.util.base;
 
 public class StringUtils extends org.apache.commons.lang3.StringUtils{
 

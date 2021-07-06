@@ -1,0 +1,58 @@
+2021-07-05 18:39:24.990 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 34768 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:39:24.992 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:39:25.221 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 34768 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:39:25.222 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:40:22.263 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 35776 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:40:22.265 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:40:22.535 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 35776 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:40:22.536 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:43:11.401 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 35900 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:43:11.403 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:43:12.202 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:43:12.259 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 35900 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:43:12.259 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:43:12.528 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:45:52.808 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 33220 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:45:52.809 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:45:53.582 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:45:53.644 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 33220 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:45:53.644 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:45:53.894 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:51:27.167 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 28072 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:51:27.168 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:51:28.009 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:51:28.074 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 28072 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:51:28.074 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:51:28.368 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:53:50.327 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 37008 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:53:50.328 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:53:51.106 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:53:51.167 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 37008 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:53:51.168 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:53:51.430 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:58:34.947 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 36872 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:58:34.949 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:58:35.709 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-07-05 18:58:35.769 [main] INFO  com.zhangds.mybatisplus.GenTest - Starting GenTest on LAPTOP-PSO9GH7M with PID 36872 (started by zhangds in D:\IdeaProjects\springboot-javabase\springboot-mybatisplus)
+2021-07-05 18:58:35.769 [main] INFO  com.zhangds.mybatisplus.GenTest - The following profiles are active: dev
+2021-07-05 18:58:36.038 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLoggingListener - 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
