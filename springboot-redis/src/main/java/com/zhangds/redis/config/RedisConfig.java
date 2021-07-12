@@ -1,5 +1,7 @@
 package com.zhangds.redis.config;
 
+import com.alibaba.fastjson.parser.ParserConfig;
+import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -48,19 +50,23 @@ public class RedisConfig {
         mapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         jackson2JsonRedisSerializer.setObjectMapper(mapper);
 
+        FastJsonRedisSerializer<Object> fastJsonRedisSerializer = new FastJsonRedisSerializer<>(Object.class);
+        // 全局开启AutoType，不建议使用
+        // ParserConfig.getGlobalInstance().setAutoTypeSupport(true);
+        // 指定序列化白名单
+        ParserConfig.getGlobalInstance().addAccept("com.zhangds.");
+
+
         RedisTemplate<String, Object> template = new RedisTemplate<>();
-        template.setConnectionFactory(redisConnectionFactory);
+        template.setConnectionFactory(redisConnectionFactory);        // hash的value序列化方式采用jackson
+        // hash和字符串的value序列化方式采用jackson
         template.setValueSerializer(jackson2JsonRedisSerializer);
+        template.setHashValueSerializer(jackson2JsonRedisSerializer);
         //使用StringRedisSerializer来序列化和反序列化redis的key值
         StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
         template.setKeySerializer(stringRedisSerializer);
-        template.setKeySerializer(stringRedisSerializer);
         // hash的key也采用String的序列化方式
         template.setHashKeySerializer(stringRedisSerializer);
-        // value序列化方式采用jackson
-        template.setValueSerializer(jackson2JsonRedisSerializer);
-        // hash的value序列化方式采用jackson
-        template.setHashValueSerializer(jackson2JsonRedisSerializer);
         template.afterPropertiesSet();
         return template;
     }

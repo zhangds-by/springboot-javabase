@@ -11,6 +11,13 @@ import org.springframework.util.StringUtils;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 分布式锁：
+ * 1、获取锁的条件
+ * 2、释放锁注意释放的锁和持有锁是否一致
+ * 3、可重入锁：获取：记录重复获取锁的次数
+ *              释放：必须获取锁时累计重入的次数，释放时则减去重入次数，如果减到0，则可以删除锁。
+ */
 public class DistributeLock implements ILock {
 
     private static final Logger logger = LoggerFactory.getLogger(DistributeLock.class);
@@ -46,25 +53,26 @@ public class DistributeLock implements ILock {
     public void lock(String lock) {
         Assert.notNull(lock, "lock cannot be null");
         String lockKey = getLockKey(lock);
-        BoundValueOperations<String,String> keyBoundValueOperations = redisTemplate.boundValueOps(lockKey);
+        // 设定key获取redis对value的操作对象
+        BoundValueOperations<String, String> stringTemplate = redisTemplate.boundValueOps(lockKey);
         while(true) {
             // 实现锁的可重入
-            String value = keyBoundValueOperations.get();
+            String value = stringTemplate.get();
             // 根据传入的值，判断用户是否持有这个锁
             if (value != null && value.equals(String.valueOf(threadId.get()))) {
                 // 重置过期时间
-                keyBoundValueOperations.expire(lockMaxExistTime, TimeUnit.SECONDS);
+                stringTemplate.expire(lockMaxExistTime, TimeUnit.SECONDS);
                 break;
             }
 
-            if (keyBoundValueOperations.setIfAbsent(lockKey)) {
+            if (stringTemplate.setIfAbsent(lockKey)) {
                 // 每次获取锁时，必须重新生成id值
                 String keyUniqueId = UUID.randomUUID().toString(); // 生成key的唯一值
                 threadId.set(keyUniqueId);
                 // 显设置value，再设置过期日期，否则过期日期无效
-                keyBoundValueOperations.set(String.valueOf(keyUniqueId));
+                stringTemplate.set(String.valueOf(keyUniqueId));
                 // 为了避免一个用户拿到锁后，进行过程中没有正常释放锁，这里设置一个默认过期实际，避免死锁
-                keyBoundValueOperations.expire(lockMaxExistTime, TimeUnit.SECONDS);
+                stringTemplate.expire(lockMaxExistTime, TimeUnit.SECONDS);
                 break;
             } else {
                 try {
@@ -80,8 +88,8 @@ public class DistributeLock implements ILock {
     @Override
     public void unlock(String lock) {
         final String lockKey = getLockKey(lock);
-        BoundValueOperations<String,String> keyBoundValueOperations = redisTemplate.boundValueOps(lockKey);
-        String lockValue = keyBoundValueOperations.get();
+        BoundValueOperations<String,String> stringTemplate = redisTemplate.boundValueOps(lockKey);
+        String lockValue = stringTemplate.get();
         if(!StringUtils.isEmpty(lockValue) && lockValue.equals(threadId.get())){
             redisTemplate.delete(lockKey);
         }else{

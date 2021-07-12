@@ -33,37 +33,21 @@ public class SyncRedisLock {
 
     private volatile boolean locked = false;
 
-    /**
-     * Detailed constructor with default acquire timeout 10000 msecs and lock expiration of 60000 msecs.
-     *
-     * @param lockKey lock key (ex. account:1, ...)
-     */
     public SyncRedisLock(RedisTemplate redisTemplate, String lockKey) {
         this.redisTemplate = redisTemplate;
         this.lockKey = lockKey + "_lock";
     }
 
-    /**
-     * Detailed constructor with default lock expiration of 60000 msecs.
-     *
-     */
     public SyncRedisLock(RedisTemplate redisTemplate, String lockKey, int timeoutMsecs) {
         this(redisTemplate, lockKey);
         this.timeoutMsecs = timeoutMsecs;
     }
 
-    /**
-     * Detailed constructor.
-     *
-     */
     public SyncRedisLock(RedisTemplate redisTemplate, String lockKey, int timeoutMsecs, int expireMsecs) {
         this(redisTemplate, lockKey, timeoutMsecs);
         this.expireMsecs = expireMsecs;
     }
 
-    /**
-     * @return lock key
-     */
     public String getLockKey() {
         return lockKey;
     }
@@ -74,6 +58,9 @@ public class SyncRedisLock {
             obj = redisTemplate.execute(new RedisCallback<Object>() {
                 @Override
                 public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                    // 键（key）和值（value）都是通过Spring提供的Serializer序列化到数据库的。
+                    // RedisTemplate默认使用的是JdkSerializationRedisSerializer
+                    // StringRedisTemplate默认使用的是StringRedisSerializer。
                     StringRedisSerializer serializer = new StringRedisSerializer();
                     byte[] data = connection.get(serializer.serialize(key));
                     connection.close();
