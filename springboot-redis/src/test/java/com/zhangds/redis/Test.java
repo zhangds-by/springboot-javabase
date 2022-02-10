@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import redis.clients.jedis.Jedis;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -33,6 +34,13 @@ public class Test {
                 System.out.println("lockCallBack");
             }
         });
+    }
+
+    @org.junit.Test
+    public void testConnect(){
+        Jedis jedis = new Jedis("192.168.25.128", 6379);
+        System.out.println(jedis.ping());
+        jedis.close();
     }
 
 }

@@ -19,6 +19,7 @@
         <module>springboot-mybatisplus</module>
         <module>springboot-mybatis</module>
         <module>springboot-mongodb</module>
+        <module>springboot-rabbitmq</module>
         <module>uid-generator</module>
     </modules>
     <parent>
@@ -281,6 +282,20 @@
             <!--            <groupId>org.springframework.boot</groupId>-->
             <!--            <artifactId>spring-boot-starter-web-services</artifactId>-->
             <!--        </dependency>-->
+
+            <!--吞吐量测试-->
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-core</artifactId>
+                <version>1.21</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjdk.jmh</groupId>
+                <artifactId>jmh-generator-annprocess</artifactId>
+                <version>1.21</version>
+                <scope>test</scope>
+            </dependency>
         </dependencies>
 
 
