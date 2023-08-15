@@ -21,6 +21,12 @@
         <module>springboot-mongodb</module>
         <module>springboot-rabbitmq</module>
         <module>uid-generator</module>
+        <module>springboot-dubbo</module>
+        <module>springboot-rpc</module>
+        <!--        <module>springboot-dubbo/dubbo-interface</module>-->
+<!--        <module>springboot-dubbo/dubbo-service-consumer</module>-->
+<!--        <module>springboot-dubbo/dubbo-service-provider</module>-->
+
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
