@@ -27,6 +27,7 @@ public class NettyServer {
             //使用链式编程配置参数
             serverBootstrap.group(bossGroup, workGroup) //设置线程组
                     .channel(NioServerSocketChannel.class)  //服务器通道实现
+//                    .localAddress(6666)
                     .option(ChannelOption.SO_BACKLOG, 128)  //设置线程队列获取的连接数
                     .childOption(ChannelOption.SO_KEEPALIVE, true)  //设置保持活动连接状态
                     //.handler(null) //handler对应bossGroup，childHandler 对应 workerGroup

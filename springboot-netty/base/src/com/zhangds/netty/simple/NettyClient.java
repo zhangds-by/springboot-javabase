@@ -23,6 +23,7 @@ public class NettyClient {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.group(group)
                     .channel(NioSocketChannel.class)
+//                    .remoteAddress(new InetSocketAddress("127.0.0.1", 6666))
                     .handler(new ChannelInitializer<SocketChannel>() {
                         @Override
                         protected void initChannel(SocketChannel socketChannel) throws Exception {
