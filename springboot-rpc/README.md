@@ -13,3 +13,10 @@ rpc框架的实现：
     rpc-netty-client：客户端
 
 ```
+
+# rpc 说明
+
+rpc：远程过程调用，可以使用tcp通信也可以使用http通信
+
+tcp：dubbo
+HTTP2.0：基于Netty实现的grpc
